@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('artist');
             $table->integer('duration');
+            $table->string('file_path');
             $table->timestamps();
         });
     }

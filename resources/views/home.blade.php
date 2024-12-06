@@ -20,13 +20,21 @@
                 <ul>
                     @foreach ($tracks as $track)
                         <li>
-                            <strong> {{ $track->title }} </strong><br>
-                            Artist: {{ $track->artist }} <br>
-                            Duration: {{ $track->duration }} sec.
+                            <strong>{{ $track->artist }} </strong> - {{ $track->title }} <br>
+                            Duration: {{ $track->duration }}s.
                         </li>
                     @endforeach
                 </ul>
             @endif
+
+            <h3>Загрузить Трек:</h3>
+            <form action="{{ route('tracks.upload') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <label for="file">Выберете файл</label>
+                <input type="file" name="file" id="file" accept="audio/mp3" required>
+                <button> Загрузить </button>
+
+            </form>
 
         </main>
         <footer></footer>

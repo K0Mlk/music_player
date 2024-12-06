@@ -9,5 +9,5 @@ class Track extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'artist', 'duratoin'];
+    protected $fillable = ['title', 'artist', 'duration', 'file_path'];
 }

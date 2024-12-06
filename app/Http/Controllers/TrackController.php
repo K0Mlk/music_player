@@ -20,4 +20,12 @@ class TrackController extends Controller
 
         return view('home', ['tracks' => $tracks]);
     }
+
+    public function upload(Request $request)
+    {
+        $file = $request->file('file');
+        $this->trackService->uploadTrackOrTracks($file);
+
+        return redirect()->back()->with('success', 'Звучок на базе!');
+    }
 }

@@ -10,4 +10,10 @@ class TrackRepository
     {
         return Track::all();
     }
+
+    public function upload(array $data)
+    {
+        // dd($data);
+        return Track::create($data);
+    }
 }

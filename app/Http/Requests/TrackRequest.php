@@ -22,9 +22,10 @@ class TrackRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required|string|max:48',
-            'artist' => 'required|string|max:48',
+            'title' => 'required|string|max:255',
+            'artist' => 'required|string|max:255',
             'duration' => 'required|integer|min:1',
+            'file_path' => 'required|mimes:mp3|max:10240'
         ];
     }
 }
