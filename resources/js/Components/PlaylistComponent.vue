@@ -10,7 +10,8 @@
             <li v-for="track in tracks" :key="track.id">
                 <strong> {{ track.title }} </strong><br>
                 Artist: {{ track.artist }} <br>
-                Duration: {{ track.duration }} sec.
+                Duration: {{ track.duration }} sec. <br>
+                <audio :src="track.file_path" controls></audio>
             </li>
         </ul>
 
@@ -24,6 +25,21 @@ export default {
         return {
             tracks: []
         }
+    },
+    methods: {
+        async fetchTracks() {
+            try {
+                const res = await this.$axios.get('/');
+                this.tracks = res.data;
+
+            } catch(e) {
+                console.e('pizdec: ', e);
+
+            }
+        }
+    },
+    mounted(){
+        this.fetchTracks();
     }
 }
 </script>

@@ -8,12 +8,16 @@
 
     </head>
     <body>
+    <div id="app">
         <header>
-            <div id="app"></div>
+            <App></App>
         </header>
 
         <main>
-            <h2>Playlist:</h2>
+            <Playlist></Playlist>
+
+
+            {{-- <h2>Playlist:</h2>
             @if ($tracks->isEmpty())
                 <p>TUT PU5T0</p>
             @else
@@ -34,10 +38,10 @@
                 <input type="file" name="file" id="file" accept="audio/mp3" required>
                 <button> Загрузить </button>
 
-            </form>
+            </form> --}}
 
         </main>
         <footer></footer>
-
+    </div>
     </body>
 </html>
