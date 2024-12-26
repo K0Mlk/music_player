@@ -14,11 +14,17 @@ class TrackController extends Controller
     {
         $this->trackService = $trackService;
     }
+
     public function index()
+    {
+        return view('home');
+    }
+    public function getTracks()
     {
         $tracks = $this->trackService->getAllTracks();
 
-        return view('home', ['tracks' => $tracks]);
+        // dd($tracks);
+        return response()->json($tracks);
     }
 
     public function upload(Request $request)

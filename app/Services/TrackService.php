@@ -33,7 +33,7 @@ class TrackService
 
         $getID3 = new getID3();
         $file_info = $getID3->analyze($file->getRealPath());
-        // dd($file_path);
+        dd($file_path);
         $title = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
         $duration = isset($file_info['playtime_seconds']) ? (int)$file_info['playtime_seconds'] : 0;
         $artist = isset($file_info['tags']['id3v2']['artist'][0]) ? $file_info['tags']['id3v2']['artist'][0] : 'Unknown Artist';

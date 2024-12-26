@@ -29,8 +29,10 @@ export default {
     methods: {
         async fetchTracks() {
             try {
-                const res = await this.$axios.get('/');
+                const res = await this.$axios.get('/tracks');
                 this.tracks = res.data;
+                console.log(res);
+
 
             } catch(e) {
                 console.e('pizdec: ', e);
